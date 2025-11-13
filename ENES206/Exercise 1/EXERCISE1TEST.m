@@ -1,0 +1,87 @@
+%James Aspilcueta
+% ENES 206-12018
+% EXERCISE 1
+% 7/10/24
+
+cprintf('blue','Here is getting help on cosd \n')
+fprintf('\n')
+help cosd       %Question 1
+fprintf('\n')
+
+fprintf('\n')
+fprintf('\n')
+cprintf('blue','Below is the lookfor function for tangent\n')
+fprintf('\n')
+lookfor tangent %Question 2
+
+% format long     %Starting question 3, changing format to fprintflay 15 characters
+
+fprintf('Question 3: pi to 15 decimals is')
+% pi
+cprintf('red','% .15f \n', pi)
+
+% format short %Changing back to short format to keep the 4 decimals as per the instructions.
+
+syms x y        %Declaring variables
+x = 1.7;
+y = exp(1.5*x) * (cos(2*x) + 2*(sin(x)));
+fprintf('The answer to question 4, y(1.7) is')
+cprintf('red','% .4f \n', y)
+
+clear         %Clearing variables after each question (UNCOMMENT FOR FINAL DRAFT)
+
+x = (pi)/6;     %Starting question 5
+y = [cos((pi) * x) + x^2 - 7*(x - 1.5)^3]/(x + 5);
+fprintf('The answer to question 5, y(pi/6) is')
+cprintf('red','% .4f \n', y)
+
+clear
+
+syms a b c z;   %starting question 6, declaring variables
+a = 6; %birthmonth is june
+b = 3*a + cos(a^2);
+c = log(b^2);
+z = c + 5;
+fprintf('The answer to question 6, when my birthmonth (june) is used is')
+cprintf('red', '% .4f \n', z)
+
+clear
+
+cos(pi/2);      %Question 7
+fprintf('\n')
+fprintf('The answer to cos(pi/2) is')
+cprintf('red','% .4e \n', ans)
+fprintf('The answer is strange. One would expect the answer to be 0. I initially thought that this was due to MatLab processing trig functions in degrees instead of radians. \n')
+fprintf('Although, if pi/2 was a degree value and not a radian one, then, cos(pi/2) would output a value close to 1. Upon further trial and error, I figured out that \n')
+fprintf('MatLab uses a floating point approximation of pi. The software does not use the actual real value of pi. Hence, MatLab will deliver a true value conforming\n')
+fprintf('to this approximation of pi. I also realized that MatLab uses radians for all trig inputs. \n')
+fprintf('\n')
+
+clear
+
+syms A P i n    %Question 8
+P = 50000; i = 0.0032; n = 48;
+A = P*[(i*((1 + i)^n))/(((1 + i)^n) - 1)];
+fprintf('The answer to question 8 is')
+cprintf('red', '% .4f\n', A)
+
+clear
+
+syms A s a b c; %Question 9
+a = 5.7; b = 8.9; c = 6.6;
+s = (1/2)*(a + b + c);
+A = [s*(s - a)*(s - b)*(s - c)]^(1/2); %This is the area of the triangle
+fprintf('The answer to question 9 is')
+cprintf('red', '% .4f\n', A)
+
+clear
+
+syms Volume Surface_Area h R1 R2;   %Question 10
+R1 = 3.0; R2 = 3.8; h = 9.5;
+Volume = (1/3) * (pi) * h * ((R1)^2 + (R2)^2 + R1 * R2);
+Surface_Area = (pi) * (R1 + R2) * [(R2 - R1)^2 + h^2]^(1/2) + (pi) * R1^2;
+fprintf('The volume part in question 10 is')
+cprintf('red', '% .4f\n', Volume)
+
+fprintf('The surface area part in question 10 is')
+cprintf('red', '% .4f\n', Surface_Area)

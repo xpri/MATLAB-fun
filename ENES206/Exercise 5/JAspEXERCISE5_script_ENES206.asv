@@ -1,0 +1,51 @@
+%James Aspilcueta
+% ENES 206-12018
+% EXERCISE 5
+% 7/21/24
+
+% syms x  %starting question 1
+% f = @(x) x.^3 - 8.*x + 3;
+% figure;
+% p = ezplot(f,[-4,3]);       %plotting
+% set(p,'Color','red','Linestyle', '--')      %changing the format of the graph
+% title('Graph for question 1')
+
+clear %clearing for question 2
+% 
+% syms x y
+% f = (x-2).^2 + 5.*y.^2 == 10;
+% g = 3.*x + 7.*y == 6;
+% figure;
+% hold on;
+% q = ezplot(f,[-3,8]);
+% set(q,'color','red');
+% w = ezplot(g,[-3,8]);
+% set(w,'color','blue');
+% title('Graph for question 2 with question 3 coordinates')
+% hold off;
+% grid on;
+% 
+% clear %clearing for question 3
+% 
+% [solx,soly] = solve(f,g);
+% plot(solx(1),soly(1),"o")
+% plot(solx(2),soly(2),"o")
+% hold off;
+
+clear %clearing for question 4
+
+syms x
+y = 2*sin(x) + cos(2*x)
+figure;
+fplot(y,[0,10])
+axis([0 10 -4 2])
+title('Graph for question 4')
+
+clear %clearing for question 5
+
+figure;
+y1 = exp(-0.2*x)*cos(x)*(x^2 - 2*x - 1);
+y2 = (x^2 - 2*x - 1)/(x + 3);
+hold on;
+plot(y1);plot(y2);
+
