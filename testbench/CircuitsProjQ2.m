@@ -40,18 +40,6 @@ R_inv = R^(-1);
 
 [I] = R_inv * V;
 
-% Calculate values for power across each resistor
-P_RL = (I(1) - I(3))^2 * R_Load;
-P_R1 = I(1)^2 * R1;
-P_R2 = (I(2) - I(1))^2 * R2;
-P_R3 = (I(2) - I_source1)^2 * R3;
-P_R4 = I(4)^2 * R4;
-P_R5 = (I(4) - I(2))^2 * R5;
-P_R6 = (I(5) - I(4))^2 * R6;
-P_R7 = (I(2) - I(5))^2 * R7;
-P_R8 = (I(2)-I(3))^2 * R8;
-P_R9 = I(3)^2 * R9;
-
 %Calculate values for current across each resistor
 I_RL = (I(1) - I(3));
 I_R1 = I(1);
@@ -120,8 +108,6 @@ clear V_R1 V_R2 V_R3 V_R4 V_R5 V_R6 V_R7 V_8 V_9 V_RL
 
 % For superposition keep the same R matrix but manipulate the V(source) matrix
 
-% For case 1 (where everything is turned off except V_source1)
-
 V_case1 = [V_source1; 0 - V_source1; 0; 0; 0];
 [I_case1] = R_inv * V_case1;
 
@@ -148,7 +134,7 @@ I_tot_R7 = (I_tot(5) - I_tot(2));
 I_tot_R8 = (I_tot(2) - I_tot(3));
 I_tot_R9 = -I_tot(3);
 
-% Now to get voltage across each resI_totstor
+% Now to get voltage across each resistor
 V_tot_RL = (I_tot(1) - I_tot(3)) * R_Load;
 V_tot_R1 = I_tot(1) * R1;
 V_tot_R2 = (I_tot(2) - I_tot(1)) * R2;
